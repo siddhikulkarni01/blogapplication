@@ -1,0 +1,147 @@
+{% extends 'header.html' %}
+
+{% block title %} Profile {% endblock %}
+{% block profileactive %} active {% endblock profileactive %}
+
+{% block css %}
+.profile{
+padding: 3%;
+margin-top: 3%;
+margin-bottom: 3%;
+border-radius: 0.5rem;
+background: #fff;
+}
+.profile-img{
+text-align: center;
+}
+.profile-img .file {
+position: relative;
+overflow: hidden;
+margin-top: -20%;
+width: 70%;
+border: none;
+border-radius: 0;
+font-size: 15px;
+background: #212529b8;
+}
+
+{% endblock %}
+{% block body %}
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        body{
+  background-image: url('https://wallpapercave.com/wp/wp4286413.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+       
+      
+    </style>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+        <div class="container profile">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    {% if profiledata.image %}
+                    <img src="/media/{{profiledata.image}}" alt="" width="310px" height="270px">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-tab">
+                    <div class="tab-pane">
+                        <br><br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Username:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{user}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Full Name:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{first_name}} {{last_name}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{email}}</p>
+                            </div>
+                        </div>
+                        {% if profiledata.phone_no %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone Number:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profiledata.phone_no}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if profiledata.bio %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Bio:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profiledata.bio}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if profiledata.linkedin %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Linkedin:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profiledata.linkedin}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if profiledata.instagram %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Instagram:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profiledata.instagram}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if profiledata.facebook %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Facebook:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{profiledata.facebook}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <a href="/edit_profile/" class="btn btn-secondary">Edit Profile</a>
+                </div>
+            </div>
+</div>
+</div>
+{% endblock %}
+
+</body>
+</html>

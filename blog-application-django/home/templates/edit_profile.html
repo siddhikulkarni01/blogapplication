@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Page {% endblock %}
+
+{% block css %}
+{% endblock %}
+{% block body %}
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style type="text/css">
+        body{
+
+        }
+        label{
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+        <form action="/edit_profile/" enctype="multipart/form-data" method="POST"> {% csrf_token %}
+    <div class="container mt-3">
+   {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+</form>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert('Your Profile has been updated successfully.');
+    document.location = '/profile/';
+    {% endif %}
+</script>
+{% endblock %}
+</body>
+</html>
+

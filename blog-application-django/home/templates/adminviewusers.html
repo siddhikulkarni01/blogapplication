@@ -1,0 +1,81 @@
+{% extends 'adminheader.html' %}
+{% block body %}
+{% load static %}
+<body class="img js-fullheight">
+<section class="ftco-section">
+<div class="container">
+
+<h1 class="heading-section">Admin View Users Page</h1>
+
+    <style type="text/css">
+        body{
+  background-image: url('https://wallpapercave.com/wp/wp4286413.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+ 
+    table
+    {
+    width:100%;
+    }
+   table,tr,th,td
+    {
+        background-color:ghostwhite;
+        margin-left:20px;
+        margin-right:20px;
+        font-name:arial;
+        border:1px solid black;
+        border-collapse:collapse;
+    }
+    th,td
+    {
+    width:200px;
+    height:50px;
+    text-align:center;
+    font-family:verdana;
+    color:black;
+    }
+
+    </style>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"78b750a00e64847d","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
+            <table>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User Name</th>
+                <th>Email Id</th>
+                <th>Joined Date</th>
+                <th>Last Login</th>
+            </tr>
+            {% for temp in posts %}
+            <tr>
+                <td>{{temp.id}}</td>
+                <td>{{temp.first_name}}</td>
+                <td>{{temp.last_name}}</td>
+                <td>{{temp.username}}</td>
+                <td>{{temp.email}}</td>
+                <td>{{temp.date_joined}}</td>
+                <td>{{temp.date_joined}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script defer
+            src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+            integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+            data-cf-beacon='{"rayId":"78b750a00e64847d","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}'
+            crossorigin="anonymous"></script>
+    {% endblock %}
